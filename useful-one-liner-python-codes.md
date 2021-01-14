@@ -52,9 +52,9 @@ OH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[object_cols]))
 ```
 
 - 데이터 프레임 합치기
-  - concat
-    - 0 위아래로
-    - 1 옆으로
+```pd.concat()```
+```axis=0``` : 위아래로
+```axis=1``` : 옆으로
  ```python
  OH_X_train = pd.concat([num_X_train, OH_cols_train], axis=1)
  ```
