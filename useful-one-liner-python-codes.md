@@ -59,4 +59,14 @@ OH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[object_cols]))
  OH_X_train = pd.concat([num_X_train, OH_cols_train], axis=1)
  ```
  
- 
+- 병렬처리 함수 ```map```  
+```python
+object_cols = X_train.columns
+
+# Get number of unique entries in each column with categorical data
+object_nunique = list(map(lambda col: X_train[col].nunique(), object_cols))
+d = dict(zip(object_cols, object_nunique))
+
+# Print number of unique entries by column, in ascending order
+sorted(d.items(), key=lambda x: x[1])
+```
