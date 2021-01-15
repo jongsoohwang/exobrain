@@ -11,6 +11,18 @@ plt.xlabel("") # x축 라벨 없애기
 plt.figure(figsize=(10,10))
 ```
 
+- 스타일 변경
+```python
+plt.style.use('seaborn-whitegrid')
+```
+
+- ```Matplotlib``` 설정
+```python
+plt.rc('figure', autolayout=True)
+plt.rc('axes', labelweight='bold', labelsize='large',
+       titleweight='bold', titlesize=18, titlepad=10)
+```
+
 # 전처리 관련
 
 - 숫자형 변수만 추출
