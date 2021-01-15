@@ -70,3 +70,21 @@ d = dict(zip(object_cols, object_nunique))
 # Print number of unique entries by column, in ascending order
 sorted(d.items(), key=lambda x: x[1])
 ```
+
+- ```dictionary``` 형식 변수에서 ```value``` 값이 최소인 ```key``` 추출하기
+```python
+results
+'''
+{50: 18353.8393511688,
+ 100: 18395.2151680032,
+ 150: 18288.730020956387,
+ 200: 18248.345889801505,
+ 250: 18255.26922247291,
+ 300: 18275.241922621914,
+ 350: 18270.29183308043,
+ 400: 18270.197974402367}
+'''
+
+## 최소값 추출
+n_estimators_best = min(results, key=results.get)
+```
