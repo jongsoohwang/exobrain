@@ -120,3 +120,9 @@ min_ = df_train.min(axis=0)
 df_train = (df_train - min_) / (max_ - min_)
 df_valid = (df_valid - min_) / (max_ - min_)
 ```
+
+- X,y split
+```python
+X = data.copy()
+y = X.pop('col')
+```
