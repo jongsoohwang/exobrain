@@ -126,3 +126,34 @@ df_valid = (df_valid - min_) / (max_ - min_)
 X = data.copy()
 y = X.pop('col')
 ```
+
+- ```query```
+```python
+# Drop live projects
+df = df.query('state != "live"')
+```
+
+- ```assign```
+```python
+# Add outcome column, "successful" == 1, others are 0
+df = df.assign(outcome=(df['state'] == 'successful').astype(int))
+```
+
+- 날짜 변수 ```assign```
+```python
+df = df.assign(hour=df.launched.dt.hour,
+               day=df.launched.dt.day,
+               month=df.launched.dt.month,
+               year=df.launched.dt.year)
+```
+
+- ```LabelEncoder()```
+```python
+from sklearn.preprocessing import LabelEncoder
+
+cat_features = ['category', 'currency', 'country']
+encoder = LabelEncoder()
+
+# Apply the label encoder to each column
+encoded = df[cat_features].apply(encoder.fit_transform)
+```
