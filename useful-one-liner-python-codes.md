@@ -100,3 +100,9 @@ results
 ## 최소값 추출
 n_estimators_best = min(results, key=results.get)
 ```
+
+- ```pandas``` ```train```, ```valid``` 나누기
+```python
+df_train = df.sample(frac=0.7, random_state=0)
+df_valid = df.drop(df_train.index)
+```
