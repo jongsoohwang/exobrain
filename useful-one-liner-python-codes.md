@@ -1,3 +1,17 @@
+# 노트북 옵션 관련
+
+- 경고 문구
+  - ignore
+  - default
+```python
+import warnings
+# 경고 문구 무시하고 숨김
+warnings.filterwarnings(action='ignore')
+
+# 경고 문구 보이게
+warnings.filterwarnings(action='default')
+```
+
 # 시각화 관련
 
 - 라벨
