@@ -106,3 +106,17 @@ n_estimators_best = min(results, key=results.get)
 df_train = df.sample(frac=0.7, random_state=0)
 df_valid = df.drop(df_train.index)
 ```
+
+- 매핑하기
+```python
+df['Class'] = df['Class'].map({'good': 0, 'bad': 1}) # 'good'을 0으로, 'bad'를 1로
+```
+
+- min_max 정규화
+```python
+max_ = df_train.max(axis=0)
+min_ = df_train.min(axis=0)
+
+df_train = (df_train - min_) / (max_ - min_)
+df_valid = (df_valid - min_) / (max_ - min_)
+```
