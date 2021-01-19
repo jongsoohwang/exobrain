@@ -36,6 +36,16 @@ plt.rc('figure', autolayout=True)
 plt.rc('axes', labelweight='bold', labelsize='large',
        titleweight='bold', titlesize=18, titlepad=10)
 ```
+- x축 회전
+```python
+plt.xticks(rotation=45)
+```
+
+- 눈금 
+```python
+plt.grid(True)
+```
+
 
 # 전처리 관련
 
@@ -170,4 +180,9 @@ encoder = LabelEncoder()
 
 # Apply the label encoder to each column
 encoded = df[cat_features].apply(encoder.fit_transform)
+```
+
+- ```pandas``` 요일 추출하기
+```python
+df['date'].dt.weekday_name
 ```
