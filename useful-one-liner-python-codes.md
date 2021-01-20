@@ -186,3 +186,11 @@ encoded = df[cat_features].apply(encoder.fit_transform)
 ```python
 df['date'].dt.weekday_name
 ```
+
+- ```unlist``` 해주는 함수
+```python
+import itertools
+
+list_of_lists = [[1, 2], [3, 4]]
+ist(itertools.chain(*list_of_lists))
+```
